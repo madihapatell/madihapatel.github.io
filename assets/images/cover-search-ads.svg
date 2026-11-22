@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <rect width="1200" height="800" fill="#e8f3ec"/>
+  <rect x="150" y="120" width="900" height="90" rx="45" fill="#fff"/>
+  <circle cx="215" cy="165" r="18" fill="none" stroke="#9aa5a0" stroke-width="6"/><path d="M228 178l18 18" stroke="#9aa5a0" stroke-width="6" stroke-linecap="round"/>
+  <rect x="270" y="152" width="360" height="26" rx="13" fill="#dfe7e2"/>
+  <rect x="150" y="260" width="900" height="420" rx="28" fill="#fff"/>
+  <rect x="200" y="310" width="70" height="36" rx="8" fill="#1f6f55"/><text x="235" y="335" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="22" font-weight="700" fill="#fff">Ad</text>
+  <rect x="290" y="316" width="300" height="24" rx="12" fill="#dfe7e2"/>
+  <rect x="200" y="380" width="640" height="44" rx="10" fill="#03a87c" opacity=".85"/>
+  <text x="980" y="412" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="40" font-weight="700" fill="#d9785f">30/30</text>
+  <rect x="200" y="460" width="780" height="22" rx="11" fill="#dfe7e2"/>
+  <rect x="200" y="500" width="600" height="22" rx="11" fill="#dfe7e2"/>
+  <g fill="#f7e3dc"><rect x="200" y="572" width="170" height="54" rx="27"/><rect x="390" y="572" width="170" height="54" rx="27"/><rect x="580" y="572" width="170" height="54" rx="27"/></g>
+</svg>

@@ -1,0 +1,127 @@
+---
+title: "Madiha Patel"
+layout: default
+description: "Content writer at StyleSpeak Magazine and SEO copywriter from Bandra West, Mumbai. Blogs on content and digital marketing, plus food, travel and soft life across Mumbai & Pune."
+---
+
+<div class="container">
+
+{% if paginator.page == 1 %}
+
+<!-- Intro -->
+<div class="jumbotron jumbotron-fluid jumbotron-home pt-0 pb-0 mt-3 mb-2rem bg-lightblue position-relative">
+    <div class="pl-4 pr-0 h-100 tofront">
+        <div class="row justify-content-between">
+            <div class="col-md-6 pt-6 pb-6 pr-4 pr-lg-4 align-self-center">
+                <p class="text-uppercase font-weight-bold small text-success mb-2">Content writer · SEO copywriter · Aspiring creator</p>
+                <h1 class="mb-3">Hi, I'm Madiha. I write words people actually want to read.</h1>
+                <p class="mb-4 lead">
+                    I'm a content writer at <strong>StyleSpeak Magazine</strong> and an SEO copywriter from Bandra West, Mumbai. I've written blogs, ad copy and product stories for beauty and home-furnishing brands. On weekends I go looking for cosy cafes, hidden food spots and soft-life plans across Mumbai and Pune, and I write about those too.
+                </p>
+                <a href="{{ site.baseurl }}/about/" class="btn btn-dark mr-2 mb-2">More about me</a>
+                <a href="{{ site.baseurl }}/blogs/" class="btn btn-outline-dark mb-2">Read the blogs</a>
+            </div>
+            <div class="col-md-6 d-none d-md-block pr-0 hero-art" style="background-image:url({{ site.baseurl }}/assets/images/hero.svg);">
+            </div>
+        </div>
+    </div>
+</div>
+
+{% if site.posts.size > 0 %}
+<div class="row remove-site-content-margin">
+
+    {% assign latest_post = site.posts[0] %}
+    <div class="col-md-6">
+    <div class="card border-0 mb-4 box-shadow">
+    <a href="{{site.baseurl}}{{latest_post.url}}">
+    <div class="topfirstimage" style="background-image: url({{site.baseurl}}/{{ latest_post.image }}); height: 200px; background-size: cover; background-repeat: no-repeat; background-position: center;"></div>
+    </a>
+    <div class="card-body px-0 pb-0 d-flex flex-column align-items-start">
+    <h2 class="h4 font-weight-bold">
+    <a class="text-dark" href="{{site.baseurl}}{{latest_post.url}}">{{ latest_post.title }}</a>
+    </h2>
+    <p class="excerpt">
+        {{ latest_post.excerpt | strip_html | strip_newlines | truncate: 136 }}
+    </p>
+    <div>
+        {% include post-meta.html post=latest_post %}
+    </div>
+    </div>
+    </div>
+    </div>
+
+    <div class="col-md-6">
+        {% for side_post in site.posts offset:1 limit:3 %}
+        <div class="mb-3 d-flex align-items-center">
+            {% if side_post.image %}
+            <div class="col-md-4 pl-0">
+            <a href="{{site.baseurl}}{{side_post.url}}">
+                <img class="w-100" src="{{site.baseurl}}/{{ side_post.image }}" alt="{{ side_post.title }}">
+            </a>
+            </div>
+            {% endif %}
+            <div>
+                <h2 class="mb-2 h6 font-weight-bold">
+                <a class="text-dark" href="{{site.baseurl}}{{side_post.url}}">{{ side_post.title }}</a>
+                </h2>
+                {% include post-meta.html post=side_post %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+</div>
+{% endif %}
+
+{% endif %}
+
+<div class="row mt-3">
+
+    <div class="col-md-8 main-loop">
+
+        <h4 class="font-weight-bold spanborder"><span>All Stories</span></h4>
+
+        {% if paginator.page == 1 %}{% assign skip = 4 %}{% else %}{% assign skip = 0 %}{% endif %}
+        {% for post in paginator.posts offset: skip %}
+            {% include main-loop-card.html %}
+        {% else %}
+            <p class="text-muted">That's everything so far. New stories are on the way. Meanwhile, <a href="{{ site.baseurl }}/blogs/">browse both sections of the blog</a>.</p>
+        {% endfor %}
+
+        {% if paginator.total_pages > 1 %}
+        <div class="mt-5">
+            <ul class="pagination">
+              {% if paginator.previous_page %}
+                <li class="page-item"><a class="page-link" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; Prev</a></li>
+              {% else %}
+                <li class="page-item disabled"><span class="prev page-link">&laquo;</span></li>
+              {% endif %}
+
+              {% for page in (1..paginator.total_pages) %}
+                {% if page == paginator.page %}
+                <li class="page-item disabled"><span class="webjeda page-link">{{ page }}</span></li>
+                {% elsif page == 1 %}
+                <li class="page-item"><a class="page-link" href="{{site.baseurl}}/">{{ page }}</a></li>
+                {% else %}
+                <li class="page-item"><a class="page-link" href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a></li>
+                {% endif %}
+              {% endfor %}
+
+              {% if paginator.next_page %}
+                <li class="page-item"><a class="page-link" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next &raquo;</a></li>
+              {% else %}
+                <li class="page-item disabled"><span class="next page-link">&raquo;</span></li>
+              {% endif %}
+            </ul>
+        </div>
+        {% endif %}
+
+    </div>
+
+    <div class="col-md-4">
+        {% include sidebar-featured.html %}
+    </div>
+
+</div>
+
+</div>

@@ -1,0 +1,33 @@
+<div class="sticky-top sticky-top-offset">
+    {% if site.tags.featured %}
+    <h4 class="font-weight-bold spanborder"><span>Featured</span></h4>
+    <ol class="list-featured">
+        {% for post in site.tags.featured %}
+            <li class="mb-4">
+            <span>
+                <h6 class="font-weight-bold">
+                    <a href="{{site.baseurl}}{{ post.url }}" class="text-dark">{{ post.title }}</a>
+                </h6>
+                <span class="d-block text-muted">
+                    In <span class="catlist">
+                    {% for category in post.categories %}
+                    <a class="text-capitalize text-muted smoothscroll" href="{{site.baseurl}}/categories.html#{{ category | downcase }}">{{ category }}</a><span class="sep">, </span>
+                    {% endfor %}
+                    </span>
+                </span>
+            </span>
+            </li>
+        {% endfor %}
+    </ol>
+    {% endif %}
+
+    <h4 class="font-weight-bold spanborder mt-4"><span>Two sides of this blog</span></h4>
+    <a class="section-link d-block mb-3 text-dark" href="{{ site.baseurl }}/blogs/#creator-diaries">
+        <strong>Creator Diaries</strong>
+        <span class="d-block text-muted small">Food, travel, soft life and building a creator page from scratch.</span>
+    </a>
+    <a class="section-link d-block mb-3 text-dark" href="{{ site.baseurl }}/blogs/#content-marketing">
+        <strong>Content &amp; Marketing</strong>
+        <span class="d-block text-muted small">SEO, copywriting and digital marketing, from someone who writes it every day.</span>
+    </a>
+</div>

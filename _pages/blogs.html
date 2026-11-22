@@ -1,0 +1,52 @@
+---
+title: "Blogs"
+layout: default
+permalink: "/blogs/"
+description: "Two sides of Madiha Patel's writing: Creator Diaries on food, travel and soft life in Mumbai & Pune, and Content & Marketing articles on SEO, copywriting and digital marketing."
+---
+
+{% assign creator_posts = site.posts | where: "section", "creator" %}
+{% assign marketing_posts = site.posts | where: "section", "marketing" %}
+
+<div class="container">
+<h3 class="font-weight-bold spanborder"><span>Blogs</span></h3>
+
+<p class="lead mb-4">There are two sides to my writing, so this blog has two sections. Pick whichever you came for.</p>
+
+<div class="section-tabs mb-5">
+    <a class="btn btn-light btn-round mr-2 mb-2" href="#creator-diaries">Creator Diaries <span class="text-muted">({{ creator_posts.size }})</span></a>
+    <a class="btn btn-light btn-round mb-2" href="#content-marketing">Content &amp; Marketing <span class="text-muted">({{ marketing_posts.size }})</span></a>
+</div>
+
+<div class="row">
+    <div class="col-md-8 main-loop">
+
+        <section id="creator-diaries" class="blog-section mb-5">
+            <h4 class="font-weight-bold spanborder"><span>Creator Diaries</span></h4>
+            <p class="text-muted mb-4">My personal creator blog: cafes, hidden food gems, weekend trips, soft life, and what it's really like to grow a page from 100 followers.</p>
+            {% for post in creator_posts %}
+                {% include main-loop-card.html %}
+            {% else %}
+                <p class="text-muted">The first diary entry is on its way.</p>
+            {% endfor %}
+        </section>
+
+        <section id="content-marketing" class="blog-section mb-5">
+            <h4 class="font-weight-bold spanborder"><span>Content &amp; Marketing</span></h4>
+            <p class="text-muted mb-4">Articles on content writing and digital marketing, including SEO, ad copy and e-commerce content, based on what I've learned writing for real brands.</p>
+            {% for post in marketing_posts %}
+                {% include main-loop-card.html %}
+            {% else %}
+                <p class="text-muted">The first article is on its way.</p>
+            {% endfor %}
+        </section>
+
+    </div>
+
+    <div class="col-md-4">
+        <div class="sticky-top sticky-top-offset">
+            {% include hire-cta.html class="hire-cta-compact" %}
+        </div>
+    </div>
+</div>
+</div>

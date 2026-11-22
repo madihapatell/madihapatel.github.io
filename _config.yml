@@ -1,0 +1,50 @@
+# Site
+name: 'Madiha Patel'
+title: 'Madiha Patel'
+tagline: 'Content writer, SEO copywriter & aspiring food, travel and lifestyle creator'
+description: 'Madiha Patel is a Mumbai-based content writer and SEO copywriter, currently writing for StyleSpeak Magazine. Blogs on content, digital marketing, food, travel and soft life in Mumbai & Pune.'
+favicon: 'assets/images/favicon.svg'
+url: 'https://madihapatell.github.io'
+baseurl: '/madihapatel.github.io'
+lang: en_IN
+linkedin: 'https://www.linkedin.com/in/madiha-patel/'
+instagram: 'https://www.instagram.com/_.madiha19/'
+
+theme: null
+include: ["_pages"]
+permalink: /:title/
+
+# Plugins (all supported by the GitHub Pages build)
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-paginate
+  - jekyll-seo-tag
+
+authors:
+  madiha:
+    name:     Madiha Patel
+    avatar:   assets/images/avatar.svg
+    bio:      "Content writer at StyleSpeak Magazine and SEO copywriter based in Bandra West, Mumbai. Writes about content and digital marketing, and about food, travel and soft life across Mumbai & Pune."
+    linkedin: https://www.linkedin.com/in/madiha-patel/
+
+# Defaults
+defaults:
+  - scope:
+      path: "_posts"
+    values:
+      layout: post
+      author: madiha
+  - scope:
+      path: "_pages"
+    values:
+      layout: page
+
+# Syntax
+markdown: kramdown
+highlighter: rouge
+
+# Paginate
+paginate: 10
+
+exclude: [README.md, CLAUDE.md, Gemfile, Gemfile.lock, vendor, node_modules]

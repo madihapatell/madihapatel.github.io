@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <rect width="1200" height="800" fill="#f7e3dc"/>
+  <circle cx="930" cy="250" r="190" fill="#f2c9b8"/>
+  <path d="M0 620c200-80 400 60 600 0s400-80 600 0v180H0z" fill="#e8f3ec"/>
+  <text x="120" y="420" font-family="Georgia, 'Times New Roman', serif" font-size="190" font-style="italic" fill="#1f6f55">hello.</text>
+  <text x="128" y="500" font-family="Helvetica, Arial, sans-serif" font-size="34" letter-spacing="6" fill="#d9785f">CREATOR DIARIES · DAY ONE</text>
+  <g fill="#d9785f"><circle cx="1010" cy="600" r="10"/><circle cx="1050" cy="600" r="10"/><circle cx="1090" cy="600" r="10"/></g>
+</svg>

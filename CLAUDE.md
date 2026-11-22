@@ -30,7 +30,7 @@ The UTF-8 locale is required in minimal containers, or Sass fails with "Invalid 
   `_pages/blogs.html` filters with `where: "section", ...`. A post with no `section` won't appear on the Blogs page.
 - **Post front matter:** `title`, `section`, `categories` (one short label shown as "In X"; `text-capitalize` is applied, so write acronyms in caps, e.g. `SEO`), `tags` (`featured` puts the post in the sidebar's Featured list), and `image` (path without a leading slash, e.g. `assets/images/cover-x.svg`). Layout and author (`madiha`) come from `_config.yml` defaults.
 - **Hire-me CTA:** `_includes/hire-cta.html` (links to LinkedIn) is used at the bottom of the About page, in the Blogs sidebar, and on every post in place of the theme's newsletter box.
-- **Contact is LinkedIn only** (`site.linkedin` in `_config.yml`). Don't add email, phone or forms. The resume this content came from has placeholder contact details.
+- **Contact is LinkedIn only** (`site.linkedin` in `_config.yml`). Never put an email address, phone number, `mailto:`/`tel:` link or contact form anywhere in the site, including posts, pages, config and front matter. The deploy workflow fails if the built site contains one.
 - **Styling:** `assets/css/main.css` (theme's Bootstrap build) and `assets/css/theme.css` (Mundana styles) are vendored theme files. Put site-specific CSS in `assets/css/custom.css`. Palette: mint `#e8f3ec`, green `#03a87c`, blush `#f7e3dc`, terracotta `#d9785f`.
 
 ## Gotchas

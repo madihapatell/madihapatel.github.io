@@ -6,6 +6,10 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Madiha Patel's personal blog/portfolio, a Jekyll site built on the [Mundana theme](https://github.com/wowthemesnet/mundana-theme-jekyll) (Bootstrap 4, jQuery, lunr search). The theme files are vendored into this repo, not loaded as a gem. It's hosted on GitHub Pages and built with the `github-pages` gem (Jekyll 3.10).
 
+## Git workflow
+
+Always commit and push directly to `main`. It's the default branch, and every push to `main` deploys the site through `.github/workflows/pages.yml`. Don't create feature branches or pull requests unless asked.
+
 ## Commands
 
 ```bash
@@ -34,4 +38,5 @@ The UTF-8 locale is required in minimal containers, or Sass fails with "Invalid 
 - The repo is `madihapatell/madihapatel.github.io`, and the owner's username differs from the repo name, so GitHub Pages serves it as a **project site** at `https://madihapatell.github.io/madihapatel.github.io/`. That's why `baseurl` is `/madihapatel.github.io`. All internal links and asset paths must be prefixed with `{{ site.baseurl }}`. If the repo is ever renamed to `madihapatell.github.io`, set `baseurl: ''`.
 - `theme: null` in `_config.yml` stops the `github-pages` gem from injecting its default Primer theme.
 - `permalink: /:title/`, so post URLs are just the slug (no date).
+- GitHub Pages source is "GitHub Actions", so the site only deploys through the workflow, and only from `main`.
 - Bootstrap JS is served locally from `assets/js/bootstrap.js`. jQuery, Popper, Font Awesome and Google Fonts load from CDNs.

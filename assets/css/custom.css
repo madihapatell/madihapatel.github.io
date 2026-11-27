@@ -1,6 +1,6 @@
 .hero-art {
     background-size: cover;
-    background-position: center;
+    background-position: 62% 45%;
     min-height: 420px;
 }
 .jumbotron-home h1 {
@@ -317,7 +317,4 @@ html[data-theme="dark"] .article-post td {
 }
 html[data-theme="dark"] .article-post th {
     background: var(--d-mint);
-}
-html[data-theme="dark"] .hero-art {
-    filter: brightness(.82);
 }

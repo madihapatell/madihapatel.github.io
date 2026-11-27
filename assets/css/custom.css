@@ -99,3 +99,225 @@
 .article-post th {
     background: #e8f3ec;
 }
+
+/* ---------- Dark mode toggle ---------- */
+.theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    border: 1px solid rgba(0,0,0,.1);
+    border-radius: 50%;
+    background: transparent;
+    color: rgba(0,0,0,.6);
+    cursor: pointer;
+    transition: color .2s, border-color .2s, background-color .2s;
+}
+.theme-toggle:hover {
+    color: #03a87c;
+    border-color: #03a87c;
+}
+.theme-toggle:focus-visible {
+    outline: 2px solid #03a87c;
+    outline-offset: 2px;
+}
+.theme-toggle .icon-sun,
+html[data-theme="dark"] .theme-toggle .icon-moon {
+    display: none;
+}
+html[data-theme="dark"] .theme-toggle .icon-sun {
+    display: block;
+}
+
+/* ---------- Dark mode colours ---------- */
+html[data-theme="dark"] {
+    color-scheme: dark;
+    --d-bg: #121615;
+    --d-surface: #1a201e;
+    --d-mint: #1b2b25;
+    --d-text: #e4e8e6;
+    --d-muted: #9ba7a2;
+    --d-border: #2b3431;
+    --d-green: #2fc79b;
+}
+html[data-theme="dark"] body {
+    background-color: var(--d-bg);
+    color: var(--d-text);
+}
+html[data-theme="dark"] .bg-white,
+html[data-theme="dark"] .alertbar {
+    background-color: var(--d-bg) !important;
+}
+html[data-theme="dark"] .bg-lightblue {
+    background-color: var(--d-mint) !important;
+}
+html[data-theme="dark"] .text-dark,
+html[data-theme="dark"] a.text-dark:hover,
+html[data-theme="dark"] a.text-dark:focus {
+    color: var(--d-text) !important;
+}
+html[data-theme="dark"] a.text-dark:hover {
+    color: var(--d-green) !important;
+}
+html[data-theme="dark"] .text-muted {
+    color: var(--d-muted) !important;
+}
+html[data-theme="dark"] .excerpt {
+    color: var(--d-muted);
+}
+html[data-theme="dark"] .article-headline {
+    color: var(--d-text);
+}
+html[data-theme="dark"] a {
+    color: var(--d-green);
+}
+html[data-theme="dark"] .text-success {
+    color: var(--d-green) !important;
+}
+html[data-theme="dark"] .btn,
+html[data-theme="dark"] .btn:hover {
+    color: #fff;
+}
+html[data-theme="dark"] .border,
+html[data-theme="dark"] .border-top,
+html[data-theme="dark"] .spanborder {
+    border-color: var(--d-border) !important;
+}
+html[data-theme="dark"] .spanborder span {
+    border-bottom-color: rgba(255,255,255,.55);
+}
+html[data-theme="dark"] ol.list-featured li:before {
+    opacity: .28;
+}
+
+/* Navbar and search */
+html[data-theme="dark"] .navbar-light .navbar-brand,
+html[data-theme="dark"] .navbar-light .navbar-brand:hover,
+html[data-theme="dark"] .navbar-light .navbar-nav .active > .nav-link,
+html[data-theme="dark"] .navbar-light .navbar-nav .nav-link:hover,
+html[data-theme="dark"] .navbar-light .navbar-nav .nav-link:focus {
+    color: var(--d-text);
+}
+html[data-theme="dark"] .navbar-light .navbar-nav .nav-link {
+    color: var(--d-muted);
+}
+html[data-theme="dark"] .navbar-light .navbar-toggler {
+    border-color: var(--d-border);
+}
+html[data-theme="dark"] .navbar-light .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255,0.7)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+html[data-theme="dark"] .theme-toggle {
+    color: var(--d-text);
+    border-color: var(--d-border);
+}
+html[data-theme="dark"] .theme-toggle:hover {
+    color: var(--d-green);
+    border-color: var(--d-green);
+}
+html[data-theme="dark"] .form-control,
+html[data-theme="dark"] .form-control:focus,
+html[data-theme="dark"] .bd-search .form-control {
+    background-color: var(--d-surface);
+    border-color: var(--d-border);
+    color: var(--d-text);
+}
+html[data-theme="dark"] .form-control::placeholder {
+    color: var(--d-muted);
+}
+html[data-theme="dark"] .modal-content {
+    background-color: var(--d-surface);
+    border-color: var(--d-border);
+}
+html[data-theme="dark"] .modal-header,
+html[data-theme="dark"] .modal-footer {
+    border-color: var(--d-border);
+}
+html[data-theme="dark"] .close {
+    color: var(--d-text);
+    text-shadow: none;
+}
+html[data-theme="dark"] .lunrsearchresult a {
+    color: var(--d-muted);
+}
+
+/* Buttons */
+html[data-theme="dark"] .btn-dark {
+    background-color: var(--d-text);
+    border-color: var(--d-text);
+    color: var(--d-bg);
+}
+html[data-theme="dark"] .btn-dark:hover {
+    background-color: #fff;
+    border-color: #fff;
+    color: var(--d-bg);
+}
+html[data-theme="dark"] .btn-outline-dark {
+    border-color: var(--d-text);
+    color: var(--d-text);
+}
+html[data-theme="dark"] .btn-outline-dark:hover {
+    background-color: var(--d-text);
+    color: var(--d-bg);
+}
+html[data-theme="dark"] .btn-light {
+    background-color: var(--d-surface);
+    border-color: var(--d-border);
+    color: var(--d-text);
+}
+html[data-theme="dark"] .btn-light:hover {
+    background-color: var(--d-mint);
+    color: var(--d-text);
+}
+html[data-theme="dark"] .btn-outline-success {
+    border-color: var(--d-green);
+    color: var(--d-green);
+}
+html[data-theme="dark"] .page-link,
+html[data-theme="dark"] .page-item.disabled .page-link {
+    background-color: var(--d-surface);
+    border-color: var(--d-border);
+}
+
+/* Site-specific blocks */
+html[data-theme="dark"] .card {
+    background-color: transparent;
+}
+html[data-theme="dark"] .profile-card,
+html[data-theme="dark"] .contact-card {
+    background: var(--d-surface);
+    border-color: var(--d-border);
+}
+html[data-theme="dark"] .timeline {
+    border-left-color: var(--d-border);
+}
+html[data-theme="dark"] .timeline-item::before {
+    background: var(--d-bg);
+    border-color: #4c5c56;
+}
+html[data-theme="dark"] .timeline-item.current::before {
+    background: var(--d-green);
+    border-color: var(--d-green);
+}
+html[data-theme="dark"] .skill {
+    background: var(--d-mint);
+    color: #c9e6da;
+}
+html[data-theme="dark"] .section-link {
+    border-left-color: var(--d-border);
+}
+html[data-theme="dark"] .section-link:hover {
+    border-left-color: var(--d-green);
+}
+html[data-theme="dark"] .article-post th,
+html[data-theme="dark"] .article-post td {
+    border-color: var(--d-border);
+}
+html[data-theme="dark"] .article-post th {
+    background: var(--d-mint);
+}
+html[data-theme="dark"] .hero-art {
+    filter: brightness(.82);
+}

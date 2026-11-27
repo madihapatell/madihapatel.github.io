@@ -32,6 +32,7 @@ The UTF-8 locale is required in minimal containers, or Sass fails with "Invalid 
 - **Hire-me CTA:** `_includes/hire-cta.html` (links to LinkedIn) is used at the bottom of the About page, in the Blogs sidebar, and on every post in place of the theme's newsletter box.
 - **Contact is LinkedIn only** (`site.linkedin` in `_config.yml`). Never put an email address, phone number, `mailto:`/`tel:` link or contact form anywhere in the site, including posts, pages, config and front matter. The deploy workflow fails if the built site contains one.
 - **Styling:** `assets/css/main.css` (theme's Bootstrap build) and `assets/css/theme.css` (Mundana styles) are vendored theme files. Put site-specific CSS in `assets/css/custom.css`. Palette: mint `#e8f3ec`, green `#03a87c`, blush `#f7e3dc`, terracotta `#d9785f`.
+- **Dark mode:** the navbar toggle sets `data-theme="dark"` or `"light"` on `<html>`. `_includes/theme-init.html` runs inline in the head (before paint), stores the choice in `localStorage` under `theme`, and falls back to the device setting. All dark colours are `html[data-theme="dark"]` overrides at the end of `custom.css`; any new component with its own colours needs a dark override there.
 
 ## Gotchas
 

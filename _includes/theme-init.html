@@ -1,0 +1,35 @@
+<script>
+(function () {
+    var root = document.documentElement;
+    var media = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+
+    function stored() {
+        try {
+            var t = localStorage.getItem('theme');
+            return t === 'dark' || t === 'light' ? t : null;
+        } catch (e) { return null; }
+    }
+    function apply(theme) {
+        root.setAttribute('data-theme', theme);
+        var btn = document.getElementById('theme-toggle');
+        if (btn) {
+            btn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+            btn.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
+        }
+    }
+
+    // Runs before first paint so the page never flashes the wrong theme.
+    apply(stored() || (media && media.matches ? 'dark' : 'light'));
+
+    document.addEventListener('DOMContentLoaded', function () { apply(root.getAttribute('data-theme')); });
+    document.addEventListener('click', function (e) {
+        if (!e.target.closest || !e.target.closest('#theme-toggle')) return;
+        var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        try { localStorage.setItem('theme', next); } catch (err) {}
+        apply(next);
+    });
+    if (media && media.addEventListener) {
+        media.addEventListener('change', function (e) { if (!stored()) apply(e.matches ? 'dark' : 'light'); });
+    }
+})();
+</script>
